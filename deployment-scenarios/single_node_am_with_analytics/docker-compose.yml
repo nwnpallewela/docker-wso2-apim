@@ -1,0 +1,17 @@
+version: '2'
+services:
+ am-analytics:
+  image : nuwanpallewela/wso2am_analytics_2.0.0:v1.0.0
+  environment:
+   SLEEP: 5
+ api-manager:
+  image : nuwanpallewela/wso2am_2.0.0:v1.0.0
+  depends_on:
+   - am-analytics
+  environment:
+   SLEEP: 90
+  ports:
+   - "80:9763"
+   - "443:9443"
+   - "8280:8280"
+   - "8243:8243"
