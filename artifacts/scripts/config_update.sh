@@ -5,7 +5,7 @@ if [ -z "$ANALYTICS" ]; then
 else
     echo "[INFO]Enabling Analytics"
     rm /opt/wso2am-2.0.0/repository/conf/api-manager.xml
-    mv /opt/docker-wso2-apim-master/artifacts/configs/single_node_am_with_analytics/api-manager.xml /opt/wso2am-2.0.0/repository/conf/api-manager.xml && echo "[INFO]Analytics is enabled"
+    cp /opt/docker-wso2-apim-master/artifacts/configs/single_node_am_with_analytics/api-manager.xml /opt/wso2am-2.0.0/repository/conf/api-manager.xml && echo "[INFO]Analytics is enabled"
 
 fi
 sh /opt/wso2am-2.0.0/bin/wso2server.sh
